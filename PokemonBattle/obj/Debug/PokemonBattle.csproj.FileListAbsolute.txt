@@ -5,3 +5,7 @@ C:\school\code\tweede_jaar\fase_1\OOP\PokemonBattle\PokemonBattle\obj\Debug\Poke
 C:\school\code\tweede_jaar\fase_1\OOP\PokemonBattle\PokemonBattle\obj\Debug\PokemonBattle.csproj.CoreCompileInputs.cache
 C:\school\code\tweede_jaar\fase_1\OOP\PokemonBattle\PokemonBattle\obj\Debug\PokemonBattle.exe
 C:\school\code\tweede_jaar\fase_1\OOP\PokemonBattle\PokemonBattle\obj\Debug\PokemonBattle.pdb
+C:\school\code\tweede_jaar\fase_1\OOP\PokemonBatllle\PokemonBattle\obj\Debug\PokemonBattle.csproj.AssemblyReference.cache
+C:\school\code\tweede_jaar\fase_1\OOP\PokemonBatllle\PokemonBattle\obj\Debug\PokemonBattle.csproj.CoreCompileInputs.cache
+C:\school\code\tweede_jaar\fase_1\OOP\PokemonBatllle\PokemonBattle\obj\Debug\PokemonBattle.exe
+C:\school\code\tweede_jaar\fase_1\OOP\PokemonBatllle\PokemonBattle\obj\Debug\PokemonBattle.pdb
