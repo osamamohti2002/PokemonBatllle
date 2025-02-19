@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\pokeball.cs" />
+    <Compile Include="classes\Charmander.cs" />
+    <Compile Include="classes\Pokeball.cs" />
+    <Compile Include="classes\Trainer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
