@@ -11,40 +11,35 @@ namespace PokemonBattle.classes
     class Trainer
     {
         public string name;
-        public List<Pokeball> belt;
+        public List<Pokeball> belt = new List<Pokeball>();
 
-        public Trainer(string name, List<Pokeball> belt)
+        public Trainer(string name)
         {
             this.name = name;
-            this.belt = belt;
 
             for (int i = 0; i < 6; i++)
             {
-                belt.Add(new Pokeball());
+                belt.Add(new Pokeball(new Charmander($"charmander{i + 1}" )));
             }
         }
-
-        public Charmander Throwpokebal()
+        
+        
+        public void Throwpokeball(int index)
         {
-            for (int i = 0; i < 6; i++)
+            if(index < 0 || index >= belt.Count)
             {
-                if (belt[i].hasChaermanderInside)
-                {
-                    Charmander charmander = belt[i].Open();
-                    belt.Remove(belt[i]);
-                    return charmander;
-                }
+                Console.WriteLine("Invalid Pokeball index");
             }
-            return null;
+            belt[index].Open();
         }
 
-        public void returnPokemon(Charmander charmander)
+        public void returnPokemon(int index)
         {
-            if (belt.Count < 6)
+            if(index >= 0  || index>= belt.Count)
             {
-                belt.close();
-
+                Console.WriteLine("Indalid pokeball index");
             }
+            belt[index].Close();
         }
 
 

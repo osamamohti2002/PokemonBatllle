@@ -10,18 +10,22 @@ namespace PokemonBattle.classes
     class Charmander
     {
 
-        public string nickName;
+        public string NickName;
         public string strength = "fire";
         public string weakness = "water";
 
 
         public Charmander(string NickName, string strength, string weakenss)
         {
-            this.nickName = NickName;
+            this.NickName = NickName;
             this.strength = strength;
             this.weakness = weakenss;
         }
 
+        public Charmander(string NickName)
+        {
+            this.NickName = NickName;
+        }
 
 
             
@@ -30,7 +34,7 @@ namespace PokemonBattle.classes
         public void battleCry()
         {
 
-            Console.WriteLine($"{nickName} Char Char");
+            Console.WriteLine($"{NickName} Char Char");
         }
         
     }

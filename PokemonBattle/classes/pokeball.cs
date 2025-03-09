@@ -31,7 +31,7 @@ namespace PokemonBattle.classes
 
         }
 
-        public void Close(Charmander charmander)
+        public void Close()
         {
             if (!hasChaermanderInside)
             {
