@@ -21,8 +21,12 @@ namespace PokemonBattle.classes
 
         public Pokeball(Charmander charmander)
         {
-            this.hasChaermanderInside = true;
-            this.charmander = charmander;
+            if ( charmander != null)
+            {
+                hasChaermanderInside = true;
+                this.charmander = charmander;
+            }
+
         }
 
         public Charmander Open()
@@ -30,6 +34,8 @@ namespace PokemonBattle.classes
             if (hasChaermanderInside)
             {
                 hasChaermanderInside = false;
+                Charmander temp = charmander;
+                charmander = null;
                 return charmander;
             }
             return null;
@@ -37,9 +43,10 @@ namespace PokemonBattle.classes
 
         public void Close(Charmander charmander)
         {
-            if (!hasChaermanderInside)
+            if (!hasChaermanderInside && charmander != null)
             {
                 hasChaermanderInside = true;
+                this.charmander = charmander;
             }
         }
 

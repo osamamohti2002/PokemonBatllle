@@ -13,50 +13,37 @@ namespace PokemonBattle.classes
         public string name;
         public List<Pokeball> belt;
 
-        public Trainer(string name)
+        public Trainer(string name, List<Pokeball> belt)
         {
-
             this.name = name;
-            this.belt = new List<Pokeball>();
+            this.belt = belt;
 
             for (int i = 0; i < 6; i++)
             {
                 belt.Add(new Pokeball());
             }
-
-            
         }
 
-        public void takePokeball(Pokeball pokeball)
+        public Charmander Throwpokebal()
         {
-            belt.Remove(pokeball);
-        }
-
-        public Charmander throwPokeball()
-        {
-            if(belt.Count > 0)
+            for (int i = 0; i < 6; i++)
             {
-                Pokeball pokeballToThrow = belt.First();
-                belt.RemoveAt(0);
-                return pokeballToThrow.Open();
+                if (belt[i].hasChaermanderInside)
+                {
+                    Charmander charmander = belt[i].Open();
+                    belt.Remove(belt[i]);
+                    return charmander;
+                }
             }
-            else
-            {
-                throw new InvalidOperationException("No Pokeballs available to throw");
-            }
+            return null;
         }
 
         public void returnPokemon(Charmander charmander)
         {
             if (belt.Count < 6)
             {
-                Pokeball pokeballToReturn = belt.First();
-                pokeballToReturn.Close(charmander);
-                belt.Add(pokeballToReturn);
-            }
-            else
-            {
-                throw new InvalidOperationException("The belt is already full");
+                belt.close();
+
             }
         }
 
