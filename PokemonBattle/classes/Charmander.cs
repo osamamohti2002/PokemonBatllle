@@ -22,10 +22,7 @@ namespace PokemonBattle.classes
             this.weakness = weakenss;
         }
 
-        public string GetName()
-        {
-            return nickName;
-        }
+
 
             
             
@@ -33,7 +30,7 @@ namespace PokemonBattle.classes
         public void battleCry()
         {
 
-            Console.WriteLine("Charmander Char Char");
+            Console.WriteLine($"{nickName} Char Char");
         }
         
     }

@@ -9,50 +9,37 @@ namespace PokemonBattle.classes
     class Pokeball
     {
         public Charmander charmander;
-        public bool hasChaermanderInside;
-
-
-        public Pokeball()
-        {
-            hasChaermanderInside = false;
-            charmander = null;
-        }
+        public bool hasChaermanderInside = false;
 
 
         public Pokeball(Charmander charmander)
         {
-            if ( charmander != null)
-            {
-                hasChaermanderInside = true;
-                this.charmander = charmander;
-            }
-
+            this.charmander = charmander;
         }
 
-        public Charmander Open()
+
+
+        public void Open()
         {
             if (hasChaermanderInside)
             {
-                hasChaermanderInside = false;
-                Charmander temp = charmander;
-                charmander = null;
-                return charmander;
+                Console.WriteLine("the pokeball is already open");
             }
-            return null;
+            hasChaermanderInside = true;
+            Console.WriteLine("Pokeball opened");
+            charmander.battleCry();
+
         }
 
         public void Close(Charmander charmander)
         {
-            if (!hasChaermanderInside && charmander != null)
+            if (!hasChaermanderInside)
             {
-                hasChaermanderInside = true;
-                this.charmander = charmander;
+                Console.WriteLine("Pokeball is already closed! ");
             }
+            hasChaermanderInside = false;
+            Console.WriteLine("Charmander returnd to the pokeball");
         }
 
-        public bool HasCharmanderInside()
-        {
-            return hasChaermanderInside;
-        }
     }
 }
