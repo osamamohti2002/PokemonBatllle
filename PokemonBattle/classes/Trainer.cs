@@ -29,6 +29,7 @@ namespace PokemonBattle.classes
             if(index < 0 || index >= belt.Count)
             {
                 Console.WriteLine("Invalid Pokeball index");
+                return;
             }
             belt[index].Open();
         }
@@ -38,6 +39,7 @@ namespace PokemonBattle.classes
             if(index >= 0  || index>= belt.Count)
             {
                 Console.WriteLine("Indalid pokeball index");
+                return;
             }
             belt[index].Close();
         }

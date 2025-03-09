@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\pokemonbattle\\classes\\trainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|c:\\school\\code\\tweede_jaar\\fase_1\\oop\\pokemonbatllle\\pokemonbattle\\classes\\trainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|solutionrelative:pokemonbattle\\classes\\trainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\pokemonbattle\\classes\\pokeball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|solutionrelative:pokemonbattle\\classes\\pokeball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\pokemonbattle\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|solutionrelative:pokemonbattle\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|c:\\school\\code\\tweede_jaar\\fase_1\\oop\\pokemonbatllle\\pokemonbattle\\classes\\pokeball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|solutionrelative:pokemonbattle\\classes\\pokeball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\pokemonbattle\\classes\\charmander.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,14 +50,14 @@
               "RelativeDocumentMoniker": "PokemonBattle\\classes\\Trainer.cs",
               "ToolTip": "C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\PokemonBattle\\classes\\Trainer.cs",
               "RelativeToolTip": "PokemonBattle\\classes\\Trainer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAIAwwCEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-17T12:26:33.006Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Pokeball.cs",
               "DocumentMoniker": "C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\PokemonBattle\\classes\\Pokeball.cs",
               "RelativeDocumentMoniker": "PokemonBattle\\classes\\Pokeball.cs",
@@ -70,13 +70,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\PokemonBattle\\Program.cs",
               "RelativeDocumentMoniker": "PokemonBattle\\Program.cs",
               "ToolTip": "C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\PokemonBattle\\Program.cs",
               "RelativeToolTip": "PokemonBattle\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-17T10:51:21.005Z",
               "EditorCaption": ""
