@@ -33,10 +33,10 @@ namespace PokemonBattle.classes
             }
             belt[index].Open();
         }
-
+        
         public void returnPokemon(int index)
         {
-            if(index >= 0  || index>= belt.Count)
+            if(index < 0  || index >= belt.Count)
             {
                 Console.WriteLine("Indalid pokeball index");
                 return;

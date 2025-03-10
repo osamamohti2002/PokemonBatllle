@@ -21,6 +21,8 @@ namespace PokemonBattle.classes
 
         public void Open()
         {
+            // dit conditie proberen bij de game logic te plaatsen
+
             if (hasChaermanderInside)
             {
                 Console.WriteLine("the pokeball is already open");
@@ -35,6 +37,8 @@ namespace PokemonBattle.classes
         {
             if (!hasChaermanderInside)
             {
+                // dit conditie proberen bij de game logic te plaatsen
+
                 Console.WriteLine("Pokeball is already closed! ");
             }
             hasChaermanderInside = false;
