@@ -38,7 +38,7 @@ namespace pokemonBattle
 
                
 
-                for (int i = 0; i < 8; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     Console.WriteLine($"\nRound {i + 1}");
                     trainer1.Throwpokeball(i);
@@ -49,7 +49,7 @@ namespace pokemonBattle
                 }
                 Console.WriteLine("Do you want to play agin? (y/n)");
                 string answer = Console.ReadLine();
-                if (answer != "Y")
+                if (answer.ToLower() != "y")
                 {
                     break;
                 }

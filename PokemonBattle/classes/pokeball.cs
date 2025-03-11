@@ -30,7 +30,7 @@ namespace PokemonBattle.classes
             }
             hasChaermanderInside = true;
             Console.WriteLine("Pokeball opened");
-            charmander.battleCry();
+            pokemon.battleCry();
 
         }
 
@@ -43,7 +43,7 @@ namespace PokemonBattle.classes
                 Console.WriteLine("Pokeball is already closed! ");
             }
             hasChaermanderInside = false;
-            Console.WriteLine("Charmander returnd to the pokeball");
+            Console.WriteLine($"{pokemon.NickName} returnd to the pokeball");
         }
 
     }
