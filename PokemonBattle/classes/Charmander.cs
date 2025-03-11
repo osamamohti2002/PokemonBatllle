@@ -16,9 +16,9 @@ namespace PokemonBattle.classes
 
         }
 
-        public override void battleCry()
+        public override string battleCry()
         {
-            Console.WriteLine($"{NickName} Char Char");
+            return $"{NickName} Char Char";
         }
 
 

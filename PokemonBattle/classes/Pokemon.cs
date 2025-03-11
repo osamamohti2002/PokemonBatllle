@@ -22,7 +22,7 @@ namespace PokemonBattle.classes
             this.weakness = weakness;
         }
 
-        public abstract void battleCry();
+        public abstract string battleCry();
 
     }
     

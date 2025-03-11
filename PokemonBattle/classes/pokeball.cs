@@ -20,30 +20,31 @@ namespace PokemonBattle.classes
 
 
 
-        public void Open()
+        public string Open()
         {
             // dit conditie proberen bij de game logic te plaatsen
 
             if (hasChaermanderInside)
             {
-                Console.WriteLine("the pokeball is already open");
+                return "the pokeball is already open"; 
             }
             hasChaermanderInside = true;
-            Console.WriteLine("Pokeball opened");
-            pokemon.battleCry();
+            
+            return pokemon.battleCry();
+
 
         }
 
-        public void Close()
+        public string Close()
         {
             if (!hasChaermanderInside)
             {
                 // dit conditie proberen bij de game logic te plaatsen
 
-                Console.WriteLine("Pokeball is already closed! ");
+                return "Pokeball is already closed! ";
             }
             hasChaermanderInside = false;
-            Console.WriteLine($"{pokemon.NickName} returnd to the pokeball");
+            return $"{pokemon.NickName} returnd to the pokeball";
         }
 
     }

@@ -26,24 +26,16 @@ namespace PokemonBattle.classes
         }
         
         
-        public void Throwpokeball(int index)
+        public string Throwpokeball(int index)
         {
-            if(index < 0 || index >= belt.Count)
-            {
-                Console.WriteLine("Invalid Pokeball index");
-                return;
-            }
-            belt[index].Open();
+            // de index wordt in de game logic gecontroleert
+            return belt[index].Open();
         }
         
-        public void returnPokemon(int index)
+        public string returnPokemon(int index)
         {
-            if(index < 0  || index >= belt.Count)
-            {
-                Console.WriteLine("Indalid pokeball index");
-                return;
-            }
-            belt[index].Close();
+            // de index wordt in de game logic gecontroleert
+            return belt[index].Close();
         }
 
 
