@@ -2,33 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace PokemonBattle.classes
 {
-    class Charmander : Pokemon
+    class Bulbasaur : Pokemon
     {
-
-
-        public Charmander() : base("Charmander", "Water", "Fire")
+        public Bulbasaur() : base("Bulbasaur", "grass", "Fire")
         {
 
         }
 
         public override void battleCry()
         {
-            Console.WriteLine($"{NickName} Char Char");
+            Console.WriteLine($"{NickName} Bulba  Bulba  ");
         }
-
-
-
-
-
-
-
-
-
-
     }
 }

@@ -17,9 +17,11 @@ namespace PokemonBattle.classes
         {
             this.name = name;
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 2; i++)
             {
-                belt.Add(new Pokeball(new Charmander($"charmander{i + 1}" )));
+                belt.Add(new Pokeball(new Charmander()));
+                belt.Add(new Pokeball(new Squirtle()));
+                belt.Add(new Pokeball(new Bulbasaur()));
             }
         }
         

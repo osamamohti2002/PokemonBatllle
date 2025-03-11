@@ -33,7 +33,12 @@ namespace pokemonBattle
                 Console.WriteLine("Enter a nmae of Trainer 2 ");
                 Trainer trainer2 = new Trainer(Console.ReadLine());
 
-                for(int i = 0; i < 8; i++)
+                Squirtle squirtle1 = new Squirtle();
+                Bulbasaur bulbasaur1 = new Bulbasaur();
+
+               
+
+                for (int i = 0; i < 8; i++)
                 {
                     Console.WriteLine($"\nRound {i + 1}");
                     trainer1.Throwpokeball(i);

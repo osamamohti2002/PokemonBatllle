@@ -8,13 +8,14 @@ namespace PokemonBattle.classes
 {
     class Pokeball
     {
-        public Charmander charmander;
+        // ipv class Charmander, Class Pokemon gebruikt
+        public Pokemon pokemon;
         public bool hasChaermanderInside = false;
 
 
-        public Pokeball(Charmander charmander)
+        public Pokeball(Pokemon pokemon)
         {
-            this.charmander = charmander;
+            this.pokemon = pokemon;
         }
 
 
