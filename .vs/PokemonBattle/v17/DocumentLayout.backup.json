@@ -3,7 +3,15 @@
   "WorkspaceRootPath": "C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\pokemonbattle\\classes\\trainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\pokemonbattle\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|solutionrelative:pokemonbattle\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|c:\\school\\code\\tweede_jaar\\fase_1\\oop\\pokemonbatllle\\pokemonbattle\\classes\\battle .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|solutionrelative:pokemonbattle\\classes\\battle .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|c:\\school\\code\\tweede_jaar\\fase_1\\oop\\pokemonbatllle\\pokemonbattle\\classes\\trainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|solutionrelative:pokemonbattle\\classes\\trainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -25,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\pokemonbattle\\classes\\charmander.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|solutionrelative:pokemonbattle\\classes\\charmander.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|c:\\school\\code\\tweede_jaar\\fase_1\\oop\\pokemonbatllle\\pokemonbattle\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D8D2E50-59FF-4C61-9DA5-FA880636EB46}|PokemonBattle\\PokemonBattle.csproj|solutionrelative:pokemonbattle\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Charmander.cs",
               "DocumentMoniker": "C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\PokemonBattle\\classes\\Charmander.cs",
               "RelativeDocumentMoniker": "PokemonBattle\\classes\\Charmander.cs",
@@ -51,18 +55,17 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-17T12:15:03.659Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\PokemonBattle\\Program.cs",
               "RelativeDocumentMoniker": "PokemonBattle\\Program.cs",
               "ToolTip": "C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\PokemonBattle\\Program.cs",
               "RelativeToolTip": "PokemonBattle\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAIwDsAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T13:01:25.557Z",
               "IsPinned": true,
@@ -70,7 +73,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "Battle .cs",
+              "DocumentMoniker": "C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\PokemonBattle\\classes\\Battle .cs",
+              "RelativeDocumentMoniker": "PokemonBattle\\classes\\Battle .cs",
+              "ToolTip": "C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\PokemonBattle\\classes\\Battle .cs",
+              "RelativeToolTip": "PokemonBattle\\classes\\Battle .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T12:07:01.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Pokeball.cs",
               "DocumentMoniker": "C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\PokemonBattle\\classes\\Pokeball.cs",
               "RelativeDocumentMoniker": "PokemonBattle\\classes\\Pokeball.cs",
@@ -78,25 +94,24 @@
               "RelativeToolTip": "PokemonBattle\\classes\\Pokeball.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T08:30:41.597Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T08:30:41.597Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Trainer.cs",
               "DocumentMoniker": "C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\PokemonBattle\\classes\\Trainer.cs",
               "RelativeDocumentMoniker": "PokemonBattle\\classes\\Trainer.cs",
               "ToolTip": "C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\PokemonBattle\\classes\\Trainer.cs",
               "RelativeToolTip": "PokemonBattle\\classes\\Trainer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T13:03:50.921Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Bulbasaur.cs",
               "DocumentMoniker": "C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\PokemonBattle\\classes\\Bulbasaur.cs",
               "RelativeDocumentMoniker": "PokemonBattle\\classes\\Bulbasaur.cs",
@@ -104,12 +119,11 @@
               "RelativeToolTip": "PokemonBattle\\classes\\Bulbasaur.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T12:48:04.301Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T12:48:04.301Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Squirtle.cs",
               "DocumentMoniker": "C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\PokemonBattle\\classes\\Squirtle.cs",
               "RelativeDocumentMoniker": "PokemonBattle\\classes\\Squirtle.cs",
@@ -117,12 +131,11 @@
               "RelativeToolTip": "PokemonBattle\\classes\\Squirtle.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T12:47:02.881Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T12:47:02.881Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Pokemon.cs",
               "DocumentMoniker": "C:\\school\\code\\tweede_jaar\\fase_1\\OOP\\PokemonBatllle\\PokemonBattle\\classes\\Pokemon.cs",
               "RelativeDocumentMoniker": "PokemonBattle\\classes\\Pokemon.cs",
@@ -130,8 +143,7 @@
               "RelativeToolTip": "PokemonBattle\\classes\\Pokemon.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T12:11:19.592Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T12:11:19.592Z"
             }
           ]
         }
