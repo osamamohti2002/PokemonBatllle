@@ -16,26 +16,19 @@ namespace PokemonBattle.classes
         public Trainer(string name)
         {
             this.name = name;
+           
 
-            for (int i = 0; i < 2; i++)
-            {
-                belt.Add(new Pokeball(new Charmander()));
-                belt.Add(new Pokeball(new Squirtle()));
-                belt.Add(new Pokeball(new Bulbasaur()));
-            }
         }
         
         
-        public string Throwpokeball(int index)
+        public Pokemon Throwpokeball(int index)
         {
-            // de index wordt in de game logic gecontroleert
             return belt[index].Open();
         }
         
-        public string returnPokemon(int index)
+        public string returnPokemon(int index, Pokemon pokemon)
         {
-            // de index wordt in de game logic gecontroleert
-            return belt[index].Close();
+            return belt[index].Close(pokemon);
         }
 
 

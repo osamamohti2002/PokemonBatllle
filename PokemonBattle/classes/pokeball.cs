@@ -10,32 +10,36 @@ namespace PokemonBattle.classes
     {
         // ipv class Charmander, Class Pokemon gebruikt
         public Pokemon pokemon;
+        // var name veranderen
         public bool hasChaermanderInside = false;
 
 
         public Pokeball(Pokemon pokemon)
         {
             this.pokemon = pokemon;
+
         }
 
 
 
-        public string Open()
+        public Pokemon Open()
         {
             // dit conditie proberen bij de game logic te plaatsen
 
             if (hasChaermanderInside)
             {
-                return "the pokeball is already open"; 
+                //return "the pokeball is already open"; 
             }
             hasChaermanderInside = true;
-            
-            return pokemon.battleCry();
+            var pokemon1 = pokemon;
+            this.pokemon = null;
+
+            return pokemon1;
 
 
         }
 
-        public string Close()
+        public string Close(Pokemon pokemon)
         {
             if (!hasChaermanderInside)
             {
@@ -43,7 +47,9 @@ namespace PokemonBattle.classes
 
                 return "Pokeball is already closed! ";
             }
+            
             hasChaermanderInside = false;
+            this.pokemon = pokemon;
             return $"{pokemon.NickName} returnd to the pokeball";
         }
 

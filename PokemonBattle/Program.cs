@@ -33,32 +33,53 @@ namespace pokemonBattle
                 // Trainer two
                 Console.WriteLine("Enter a nmae of Trainer 2 ");
                 Trainer trainer2 = new Trainer(Console.ReadLine());
- 
 
-                for (int i = 0; i < 8; i++)
+
+                for (int i = 0; i < 2; i++)
                 {
-                    if (i < trainer1.belt.Count() && i < trainer2.belt.Count())
-                    {
-                        
+                    trainer1.belt.Add(new Pokeball(new Charmander()));
+                    trainer1.belt.Add(new Pokeball(new Squirtle()));
+                    trainer1.belt.Add(new Pokeball(new Bulbasaur()));
+
+                    trainer2.belt.Add(new Pokeball(new Charmander()));
+                    trainer2.belt.Add(new Pokeball(new Squirtle()));
+                    trainer2.belt.Add(new Pokeball(new Bulbasaur()));
+                }
+
+
+                try
+                {
+                    for (int i = 0; i < 8; i++)
+                {
+
+                        // ipv if gebruik try and catch
+                        //if (i < trainer1.belt.Count() && i < trainer2.belt.Count())
+                        Pokemon pokemon = trainer1.Throwpokeball(i);
+                        Pokemon pokemon2 = trainer2.Throwpokeball(i);
+
                         Console.WriteLine($"\nRound {i + 1}");
                         Console.WriteLine($"{trainer1.name} Throw his Pokeball");
                         Console.WriteLine("Pokeball opened");
-                        Console.WriteLine(trainer1.Throwpokeball(i));
+                        Console.WriteLine(pokemon.battleCry());
+
 
                         Console.WriteLine($"{trainer2.name} Throw his Pokeball");
                         Console.WriteLine("Pokeball opened");
-                        Console.WriteLine(trainer2.Throwpokeball(i));
+                        Console.WriteLine(pokemon2.battleCry());
 
-                        Console.WriteLine(trainer1.returnPokemon(i));
-                        Console.WriteLine(trainer2.returnPokemon(i)); 
+                        Console.WriteLine(trainer1.returnPokemon(i, pokemon));
+                        Console.WriteLine(trainer2.returnPokemon(i, pokemon2));
                         Thread.Sleep(500);
                     }
-                    else
-                    {
-                        Console.WriteLine($"Je had alleen maar {trainer1.belt.Count()} rondes");
-                        break;
-                    }
 
+
+
+
+
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    Console.WriteLine($"Je had alleen maar {trainer1.belt.Count()} rondes");
                 }
                 Console.WriteLine("Do you want to play agin? (y/n)");
                 string answer = Console.ReadLine();
