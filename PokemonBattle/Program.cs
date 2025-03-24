@@ -20,6 +20,8 @@ namespace pokemonBattle
         static void Main(string[] args)
         {
 
+            // schaelaar toevoegen in de while ipv true en vervolgens in de if stetment om zetten
+
             while (true)
             {
 
@@ -49,8 +51,8 @@ namespace pokemonBattle
 
                 try
                 {
-                    for (int i = 0; i < 8; i++)
-                {
+                    for (int i = 0; i < 6; i++)
+                    {
 
                         // ipv if gebruik try and catch
                         //if (i < trainer1.belt.Count() && i < trainer2.belt.Count())
