@@ -11,7 +11,7 @@ namespace PokemonBattle.classes
     {
 
 
-        public Charmander() : base("Charmander", "Water", "Fire")
+        public Charmander() : base("Charmander", "fire", "water")
         {
 
         }

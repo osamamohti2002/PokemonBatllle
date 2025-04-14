@@ -8,7 +8,7 @@ namespace PokemonBattle.classes
 {
     class Bulbasaur : Pokemon
     {
-        public Bulbasaur() : base("Bulbasaur", "grass", "Fire")
+        public Bulbasaur() : base("Bulbasaur", "grass", "fire")
         {
 
         }

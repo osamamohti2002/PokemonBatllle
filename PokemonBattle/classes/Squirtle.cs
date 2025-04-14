@@ -8,7 +8,7 @@ namespace PokemonBattle.classes
 {
      class Squirtle : Pokemon
     {
-        public Squirtle() : base("Squirtle", "water", "leaf ")
+        public Squirtle() : base("Squirtle", "water", "leaf")
         {
 
         }

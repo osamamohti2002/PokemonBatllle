@@ -9,7 +9,7 @@ using System.Web;
 
 namespace PokemonBattle.classes
 {
-    abstract class Pokemon
+    public abstract class Pokemon
     {
         public string NickName;
         public string strength;

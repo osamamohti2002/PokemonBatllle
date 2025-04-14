@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 namespace pokemonBattle
 {
     using System.Collections.Concurrent;
+    using System.Net.Configuration;
     using System.Threading;
     using PokemonBattle.classes;
 
@@ -24,8 +25,6 @@ namespace pokemonBattle
 
             while (true)
             {
-
-
                 Console.WriteLine("Welcome to the Pokemon Battle simulator! ");
 
                 // Trainer one 
@@ -36,55 +35,42 @@ namespace pokemonBattle
                 Console.WriteLine("Enter a nmae of Trainer 2 ");
                 Trainer trainer2 = new Trainer(Console.ReadLine());
 
+                // 6 random pokeballs aan de trainers geven 
+                Random random = new Random();
 
-                for (int i = 0; i < 2; i++)
+                List<Pokemon> pokemons = new List<Pokemon>
                 {
-                    trainer1.belt.Add(new Pokeball(new Charmander()));
-                    trainer1.belt.Add(new Pokeball(new Squirtle()));
-                    trainer1.belt.Add(new Pokeball(new Bulbasaur()));
+                    new Charmander(),
+                    new Squirtle(),
+                    new Bulbasaur(),
+                };
 
-                    trainer2.belt.Add(new Pokeball(new Charmander()));
-                    trainer2.belt.Add(new Pokeball(new Squirtle()));
-                    trainer2.belt.Add(new Pokeball(new Bulbasaur()));
+                for (int i = 0; i < 6; i++)
+                {
+                    Pokemon randomPokemon = pokemons[random.Next(pokemons.Count)];
+                    trainer1.belt.Add(new Pokeball(randomPokemon));
+                }
+
+                // Assign 6 random Pokéballs to trainer
+                for (int i = 0; i < 6; i++)
+                {
+                    Pokemon randomPokemon = pokemons[random.Next(pokemons.Count)];
+                    trainer2.belt.Add(new Pokeball(randomPokemon));
                 }
 
 
-                try
-                {
-                    for (int i = 0; i < 6; i++)
-                    {
-
-                        // ipv if gebruik try and catch
-                        //if (i < trainer1.belt.Count() && i < trainer2.belt.Count())
-                        Pokemon pokemon = trainer1.Throwpokeball(i);
-                        Pokemon pokemon2 = trainer2.Throwpokeball(i);
-
-                        Console.WriteLine($"\nRound {i + 1}");
-                        Console.WriteLine($"{trainer1.name} Throw his Pokeball");
-                        Console.WriteLine("Pokeball opened");
-                        Console.WriteLine(pokemon.battleCry());
 
 
-                        Console.WriteLine($"{trainer2.name} Throw his Pokeball");
-                        Console.WriteLine("Pokeball opened");
-                        Console.WriteLine(pokemon2.battleCry());
+                Arena.StartBattle(trainer1 ,trainer2);
 
-                        Console.WriteLine(trainer1.returnPokemon(i, pokemon));
-                        Console.WriteLine(trainer2.returnPokemon(i, pokemon2));
-                        Thread.Sleep(500);
-                    }
+                Arena.setBattle();
 
 
-
-
-
-                }
-                catch (ArgumentOutOfRangeException ex)
-                {
-                    Console.WriteLine($"Je had alleen maar {trainer1.belt.Count()} rondes");
-                }
                 Console.WriteLine("Do you want to play agin? (y/n)");
                 string answer = Console.ReadLine();
+                Arena.restScoor();
+
+                Console.WriteLine(Arena.getBattle()); 
                 if (answer.ToLower() != "y")
                 {
                     break;
@@ -100,3 +86,18 @@ namespace pokemonBattle
         }
     }
 }
+
+
+
+
+
+
+//for (int i = 0;i < trainer1.belt.Count; i++)
+//{
+//    Console.WriteLine($"trainet1 belt  {trainer1.belt[i].pokemon.NickName}" );
+//}
+
+//for (int i = 0; i < trainer2.belt.Count; i++)
+//{
+//    Console.WriteLine($"trainet2 belt  {trainer2.belt[i].pokemon.NickName}");
+//}

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -9,11 +10,8 @@ namespace PokemonBattle.classes
 {
     class Battle
     {
-        public Trainer trainer1;
-        public Trainer trainer2;
-
-
-        
+        private Trainer trainer1;
+        private Trainer trainer2;
 
         public Battle(Trainer trainer1, Trainer trainer2)
         {
@@ -21,93 +19,94 @@ namespace PokemonBattle.classes
             this.trainer2 = trainer2;
         }
 
-
-        public void StartBattle()
+        public void startBattle()
         {
-
-            for (int i = 0; i < 2; i++)
+            try
             {
+                int roudns = 6;
+                for (int i = 0; i < roudns && trainer1.belt.Count > 0 && trainer2.belt.Count > 0; i++)
+                {
+
+                    // shrinks te ontweikken onderzoeken 
+                    Pokeball pokeball1 = trainer1.belt[0];
+                    Pokeball pokeball2 = trainer2.belt[0];
+
+                    trainer1.Throwpokeball(pokeball1);
+                    trainer2.Throwpokeball(pokeball2);
+                        
+                    Console.WriteLine($"aantal pokeballs voor trainer1 {trainer1.belt.Count}");
+                    Console.WriteLine($"aantal pokeballs voor trainer2 {trainer2.belt.Count}");
+                    // check winning 
+                    // punten trainers aanpassen in de arena 
+
+                    int result = DetermineWinner(pokeball1.pokemon, pokeball2.pokemon);
+                    if (result == 1) { Arena.addScoreTrainerOne(); }
+                    else if (result == 2) { Arena.addScoreTrainerTwo(); }
+                    else { Console.WriteLine("Draw"); }
+
+                    trainer1.removrPokeball(pokeball1);
+                    trainer2.removrPokeball(pokeball2);
 
 
-                trainer1.belt.Add(new Pokeball(new Charmander()));
-                trainer1.belt.Add(new Pokeball(new Squirtle()));
-                trainer1.belt.Add(new Pokeball(new Bulbasaur()));
-                
+                    Console.WriteLine($"scoor trainer1 {trainer1.name} {Arena.getScoorTrianerOne()}");
+                    Console.WriteLine($"scoor trainer2 {trainer2.name} {Arena.getScoorTrianerTwo()}");
 
-                trainer2.belt.Add(new Pokeball(new Charmander()));
-                trainer2.belt.Add(new Pokeball(new Squirtle()));
-                trainer2.belt.Add(new Pokeball(new Bulbasaur()));
+                    // docent vragen over of de pokemon in de bal terug moet? of de pokeball in de belt
+                    trainer1.returnPokemon(pokeball1, pokeball1.pokemon);
+                    trainer2.returnPokemon(pokeball1, pokeball2.pokemon);
+                    //Console.WriteLine(pokeball1.Close(pokeball1.pokemon));
+
+                    Thread.Sleep(500);
+                    Arena.addRound();
+                }
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine($"Je had alleen maar {trainer1.belt.Count()} rondes");
+            }
+        }
+
+        public int DetermineWinner(Pokemon pokemon1, Pokemon pokemon2)
+        {
+            // If both Pokémon have the same strength, it's a tie
+            if (pokemon1.strength == pokemon2.strength)
+            {
+                return 0;
             }
 
+            // Check win conditions based on the rules
+            else if ((pokemon1.strength == "fire" && pokemon2.strength == "grass") ||// Charmander vs Bulbasaur
+                    (pokemon1.strength == "grass" && pokemon2.strength == "water") || //Bulbasaur vs Squirtle) 
+                    (pokemon1.strength == "water" && pokemon2.strength == "fire"))// Squirtle vs Charmander 
+            {
+                return 1;
+            }
             
-
-            while (trainer1.belt.Count > 0 && trainer2.belt.Count > 0)
-            {
-
-                try
-                {
-                    for (int i = 0; i < 6; i++)
-                    {
-
-                        // ipv if gebruik try and catch
-                        //if (i < trainer1.belt.Count() && i < trainer2.belt.Count())
-
-                        Pokeball pokeball1 = getRandomPokeball(trainer1);
-                        Pokeball pokeball2 = getRandomPokeball(trainer2);
-
-                        Pokemon pokemon = trainer1.Throwpokeball(i);
-                        Pokemon pokemon2 = trainer2.Throwpokeball(i);
-
-                        Console.WriteLine($"\nRound {i + 1}");
-                        Console.WriteLine($"{trainer1.name} Throw his Pokeball");
-                        Console.WriteLine("Pokeball opened");
-                        Console.WriteLine(pokemon.battleCry());
-
-
-                        Console.WriteLine($"{trainer2.name} Throw his Pokeball");
-                        Console.WriteLine("Pokeball opened");
-                        Console.WriteLine(pokemon2.battleCry());
-
-                        Console.WriteLine(trainer1.returnPokemon(i, pokemon));
-                        Console.WriteLine(trainer2.returnPokemon(i, pokemon2));
-                        Thread.Sleep(500);
-                    }
-
-                }
-                catch (ArgumentOutOfRangeException ex)
-                {
-                    Console.WriteLine($"Je had alleen maar {trainer1.belt.Count()} rondes");
-                }
-
-            }
+            // If pokemon1 doesn't win, pokemon2 wins
+            return 2;
         }
 
-        public  Pokeball getRandomPokeball(Trainer trainer)
+        public int checkWinner(int trainerScoorOne, int trainerScoorTwo)
         {
-            Random random = new Random();
-            return trainer.belt[random.Next(trainer.belt.Count)];
-        }
-
-        public int DetermineWinner(Pokemon pokemon1,  Pokemon pokemon2)
-        {
-            if ((pokemon1.strength == "fire" && pokemon2.weakness == "fire") ||
-                (pokemon1.strength == "grass" && pokemon2.weakness == "grass") ||
-                (pokemon1.strength == "water" && pokemon2.weakness == "water"))
+            if (trainerScoorOne > trainerScoorTwo)
             {
-                return 1; // trainer 1 wint
+                Console.WriteLine($"{trainer1.name} heeft dit battle gewonnen");
+                return 1;
             }
-            else if ((pokemon2.strength == "fire" && pokemon1.weakness == "fire") ||
-                     (pokemon2.strength == "grass" && pokemon1.weakness == "grass") ||
-                     (pokemon2.strength == "water" && pokemon1.weakness == "water"))
+            else if (trainerScoorTwo > trainerScoorOne)
             {
-                return -1; // treainer 2 wint
+                Console.WriteLine($"{trainer2.name} heeft dit battle gewonnen");
+                return 2;
             }
-            return 0; // gelijkspel
+            else
+            {
+                Console.WriteLine("beide trainers gelijk gespeeld");
+                return 0;
+            }
         }
-
-
-
     }
-
-
 }
+
+
+
+
