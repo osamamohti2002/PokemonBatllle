@@ -18,13 +18,11 @@ namespace PokemonBattle.classes
             this.name = name;
         }
 
-        // method voor pokeball te pakken met random pokeball
 
 
         public Pokemon Throwpokeball(Pokeball pokeball)
         {
             var pokemon = pokeball.Open(pokeball.pokemon);
-            Console.WriteLine($"the pokeball is opened {pokeball.pokemon.NickName}");
             return pokemon;
 
         }
@@ -32,12 +30,11 @@ namespace PokemonBattle.classes
         public void removrPokeball(Pokeball pokeball)
         {
             belt.Remove(pokeball);
-            Console.WriteLine($"the pokeball is removed {pokeball.pokemon.NickName}");
+            //Logger.log($"the pokeball is removed {pokeball.pokemon.NickName}");
         }
 
         public Pokemon returnPokemon(Pokeball pokeball, Pokemon pokemon)
         {
-            //belt.Add(new Pokeball(pokemon));
             return pokeball.Close(pokemon);
         }
 

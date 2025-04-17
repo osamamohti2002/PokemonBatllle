@@ -28,7 +28,7 @@ namespace PokemonBattle.classes
         {
             hasChaermanderInside = true;
             return pokemon;
-            //return $"{pokemon.NickName} returnd to the pokeball";
+
         }
 
     }

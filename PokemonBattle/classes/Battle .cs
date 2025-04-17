@@ -32,29 +32,32 @@ namespace PokemonBattle.classes
                     Pokeball pokeball2 = trainer2.belt[0];
 
                     trainer1.Throwpokeball(pokeball1);
+                    Logger.log($"the pokeball is opened {pokeball1.pokemon.NickName}");
+
                     trainer2.Throwpokeball(pokeball2);
-                        
-                    Console.WriteLine($"aantal pokeballs voor trainer1 {trainer1.belt.Count}");
-                    Console.WriteLine($"aantal pokeballs voor trainer2 {trainer2.belt.Count}");
+                    Logger.log($"the pokeball is opened {pokeball2.pokemon.NickName}");
+
+
+                    //Logger.log($"aantal pokeballs voor trainer1 {trainer1.belt.Count}");
+                    //Logger.log($"aantal pokeballs voor trainer2 {trainer2.belt.Count}");
+
                     // check winning 
                     // punten trainers aanpassen in de arena 
 
                     int result = DetermineWinner(pokeball1.pokemon, pokeball2.pokemon);
                     if (result == 1) { Arena.addScoreTrainerOne(); }
                     else if (result == 2) { Arena.addScoreTrainerTwo(); }
-                    else { Console.WriteLine("Draw"); }
+                    else { Logger.log("DRAW"); }
 
                     trainer1.removrPokeball(pokeball1);
                     trainer2.removrPokeball(pokeball2);
 
-
-                    Console.WriteLine($"scoor trainer1 {trainer1.name} {Arena.getScoorTrianerOne()}");
-                    Console.WriteLine($"scoor trainer2 {trainer2.name} {Arena.getScoorTrianerTwo()}");
+                    Logger.log($"scoor trainer1 {trainer1.name} {Arena.getScoorTrianerOne()}");
+                    Logger.log($"scoor trainer2 {trainer2.name} {Arena.getScoorTrianerTwo()}");
 
                     // docent vragen over of de pokemon in de bal terug moet? of de pokeball in de belt
                     trainer1.returnPokemon(pokeball1, pokeball1.pokemon);
                     trainer2.returnPokemon(pokeball1, pokeball2.pokemon);
-                    //Console.WriteLine(pokeball1.Close(pokeball1.pokemon));
 
                     Thread.Sleep(500);
                     Arena.addRound();
@@ -62,7 +65,7 @@ namespace PokemonBattle.classes
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                Console.WriteLine($"Je had alleen maar {trainer1.belt.Count()} rondes");
+                Logger.log($"Je had alleen maar {trainer1.belt.Count()} rondes");
             }
         }
 
@@ -90,17 +93,17 @@ namespace PokemonBattle.classes
         {
             if (trainerScoorOne > trainerScoorTwo)
             {
-                Console.WriteLine($"{trainer1.name} heeft dit battle gewonnen");
+                Logger.log($"{trainer1.name} heeft dit battle gewonnen");
                 return 1;
             }
             else if (trainerScoorTwo > trainerScoorOne)
             {
-                Console.WriteLine($"{trainer2.name} heeft dit battle gewonnen");
+                Logger.log($"{trainer2.name} heeft dit battle gewonnen");
                 return 2;
             }
             else
             {
-                Console.WriteLine("beide trainers gelijk gespeeld");
+                Logger.log("beide trainers gelijk gespeeld");
                 return 0;
             }
         }

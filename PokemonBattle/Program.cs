@@ -60,17 +60,16 @@ namespace pokemonBattle
 
 
 
-
-                Arena.StartBattle(trainer1 ,trainer2);
-
+                Arena arena = new Arena();
+                arena.StartBattle(trainer1 ,trainer2);
                 Arena.setBattle();
-
-
                 Console.WriteLine("Do you want to play agin? (y/n)");
                 string answer = Console.ReadLine();
                 Arena.restScoor();
+                Console.WriteLine($"gespeelde battle {Arena.getBattles()}");
 
-                Console.WriteLine(Arena.getBattle()); 
+
+
                 if (answer.ToLower() != "y")
                 {
                     break;

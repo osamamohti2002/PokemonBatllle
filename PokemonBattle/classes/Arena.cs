@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace PokemonBattle.classes
 {
-    public static class Arena
+    public class Arena
     {
 
         // ik moet battle variabel hebben 
@@ -16,6 +16,8 @@ namespace PokemonBattle.classes
         private static int rounds = 0; 
         private static int trainerOneScoor = 0;
         private static int trainerTwoScoor = 0;
+        private Battle battle;
+
 
 
         public static void addRound()
@@ -54,16 +56,16 @@ namespace PokemonBattle.classes
             battles++;
         }
 
-        public static int getBattle()
+        public static int getBattles()
         {
             return battles;
         }
 
 
-        public static void StartBattle(Trainer trainer1, Trainer trainer2)
+        public void StartBattle(Trainer trainer1, Trainer trainer2)
         {
 
-            Battle battle = new Battle(trainer1, trainer2);
+            battle = new Battle(trainer1, trainer2);
             battle.startBattle();
             battle.checkWinner(getScoorTrianerOne(), getScoorTrianerTwo());
 
