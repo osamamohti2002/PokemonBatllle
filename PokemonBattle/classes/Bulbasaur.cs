@@ -8,14 +8,14 @@ namespace PokemonBattle.classes
 {
     class Bulbasaur : Pokemon
     {
-        public Bulbasaur() : base("Bulbasaur", "grass", "fire")
+        public Bulbasaur() : base("Bulbasaur", PokemonType.Grass, PokemonType.Fire)
         {
 
         }
 
         public override string battleCry()
         {
-            return $"{NickName} Bulba  Bulba  ";
+            return $"{getNickName()} Bulba  Bulba  ";
         }
     }
 }

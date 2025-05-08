@@ -20,9 +20,6 @@ namespace pokemonBattle
 
         static void Main(string[] args)
         {
-
-            // schaelaar toevoegen in de while ipv true en vervolgens in de if stetment om zetten
-
             while (true)
             {
                 Console.WriteLine("Welcome to the Pokemon Battle simulator! ");
@@ -38,27 +35,27 @@ namespace pokemonBattle
                 // 6 random pokeballs aan de trainers geven 
                 Random random = new Random();
 
-                List<Pokemon> pokemons = new List<Pokemon>
+                List<Pokemon> pokemons = new List<Pokemon>();
+                for(int i = 0; i < 4; i++)
                 {
-                    new Charmander(),
-                    new Squirtle(),
-                    new Bulbasaur(),
-                };
+                    pokemons.Add(new Charmander());
+                    pokemons.Add(new Squirtle());
+                    pokemons.Add(new Bulbasaur());
+                }
 
                 for (int i = 0; i < 6; i++)
                 {
                     Pokemon randomPokemon = pokemons[random.Next(pokemons.Count)];
-                    trainer1.belt.Add(new Pokeball(randomPokemon));
+                    trainer1.getPokeballs().Add(new Pokeball(randomPokemon));
+                    pokemons.Remove(randomPokemon);
                 }
 
-                // Assign 6 random Pokéballs to trainer
                 for (int i = 0; i < 6; i++)
                 {
                     Pokemon randomPokemon = pokemons[random.Next(pokemons.Count)];
-                    trainer2.belt.Add(new Pokeball(randomPokemon));
+                    trainer2.getPokeballs().Add(new Pokeball(randomPokemon));
+                    pokemons.Remove(randomPokemon);
                 }
-
-
 
                 Arena arena = new Arena();
                 arena.StartBattle(trainer1 ,trainer2);
@@ -67,8 +64,6 @@ namespace pokemonBattle
                 string answer = Console.ReadLine();
                 Arena.restScoor();
                 Console.WriteLine($"gespeelde battle {Arena.getBattles()}");
-
-
 
                 if (answer.ToLower() != "y")
                 {

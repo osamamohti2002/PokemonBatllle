@@ -11,24 +11,14 @@ namespace PokemonBattle.classes
     {
 
 
-        public Charmander() : base("Charmander", "fire", "water")
+        public Charmander() : base("Charmander", PokemonType.Fire, PokemonType.Water)
         {
 
         }
-
         public override string battleCry()
         {
-            return $"{NickName} Char Char";
+            return $"{getNickName()} Char Char";
         }
-
-
-
-
-
-
-
-
-
 
     }
 }

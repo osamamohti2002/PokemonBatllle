@@ -11,23 +11,42 @@ namespace PokemonBattle.classes
 {
     public abstract class Pokemon
     {
-        public string NickName;
-        public string strength;
-        public string weakness;
+        private readonly string NickName;
+        private readonly PokemonType strength;
+        private readonly PokemonType weakness;
 
-        public Pokemon(string Nickname, string strength, string weakness)
+        public Pokemon(string Nickname, PokemonType strength, PokemonType weakness)
         { 
             this.NickName = Nickname;
             this.strength = strength;
             this.weakness = weakness;
         }
 
+        public string getNickName()
+        {
+            return NickName;
+        }
+
+        public PokemonType getStrength()
+        {
+            return strength;
+        }
+
+        public PokemonType getWeakness()
+        {
+            return weakness;
+        }
+
         public abstract string battleCry();
 
     }
-    
 
-
-
+    public enum PokemonType
+    {
+        Fire,
+        Water,
+        Grass,
+        Leef,
+    }
 
 }

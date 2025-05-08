@@ -24,27 +24,21 @@ namespace PokemonBattle.classes
             try
             {
                 int roudns = 6;
-                for (int i = 0; i < roudns && trainer1.belt.Count > 0 && trainer2.belt.Count > 0; i++)
+                for (int i = 0; i < roudns && trainer1.getPokeballs().Count > 0 && trainer2.getPokeballs().Count > 0; i++)
                 {
 
                     // shrinks te ontweikken onderzoeken 
-                    Pokeball pokeball1 = trainer1.belt[0];
-                    Pokeball pokeball2 = trainer2.belt[0];
+                    Pokeball pokeball1 = trainer1.getPokeballs()[0];
+                    Console.WriteLine($"pokemon trainer1 {pokeball1}" );
+                    Pokeball pokeball2 = trainer2.getPokeballs()[0];
 
                     trainer1.Throwpokeball(pokeball1);
-                    Logger.log($"the pokeball is opened {pokeball1.pokemon.NickName}");
+                    Logger.log($"the pokeball is opened {pokeball1.getPokemon().getNickName()}");
 
                     trainer2.Throwpokeball(pokeball2);
-                    Logger.log($"the pokeball is opened {pokeball2.pokemon.NickName}");
+                    Logger.log($"the pokeball is opened {pokeball2.getPokemon().getNickName()}");
 
-
-                    //Logger.log($"aantal pokeballs voor trainer1 {trainer1.belt.Count}");
-                    //Logger.log($"aantal pokeballs voor trainer2 {trainer2.belt.Count}");
-
-                    // check winning 
-                    // punten trainers aanpassen in de arena 
-
-                    int result = DetermineWinner(pokeball1.pokemon, pokeball2.pokemon);
+                    int result = DetermineWinner(pokeball1.getPokemon(), pokeball2.getPokemon());
                     if (result == 1) { Arena.addScoreTrainerOne(); }
                     else if (result == 2) { Arena.addScoreTrainerTwo(); }
                     else { Logger.log("DRAW"); }
@@ -52,12 +46,12 @@ namespace PokemonBattle.classes
                     trainer1.removrPokeball(pokeball1);
                     trainer2.removrPokeball(pokeball2);
 
-                    Logger.log($"scoor trainer1 {trainer1.name} {Arena.getScoorTrianerOne()}");
-                    Logger.log($"scoor trainer2 {trainer2.name} {Arena.getScoorTrianerTwo()}");
+                    Logger.log($"scoor trainer1 {trainer1.getName()} {Arena.getScoorTrianerOne()}");
+                    Logger.log($"scoor trainer2 {trainer2.getName()} {Arena.getScoorTrianerTwo()}");
 
                     // docent vragen over of de pokemon in de bal terug moet? of de pokeball in de belt
-                    trainer1.returnPokemon(pokeball1, pokeball1.pokemon);
-                    trainer2.returnPokemon(pokeball1, pokeball2.pokemon);
+                    trainer1.returnPokemon(pokeball1, pokeball1.getPokemon());
+                    trainer2.returnPokemon(pokeball1, pokeball2.getPokemon());
 
                     Thread.Sleep(500);
                     Arena.addRound();
@@ -65,40 +59,37 @@ namespace PokemonBattle.classes
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                Logger.log($"Je had alleen maar {trainer1.belt.Count()} rondes");
+                Logger.log($"Je had alleen maar {trainer1.getPokeballs().Count()} rondes");
             }
         }
 
         public int DetermineWinner(Pokemon pokemon1, Pokemon pokemon2)
         {
-            // If both Pokémon have the same strength, it's a tie
-            if (pokemon1.strength == pokemon2.strength)
+            if (pokemon1.getStrength() == pokemon2.getStrength())
             {
                 return 0;
             }
 
-            // Check win conditions based on the rules
-            else if ((pokemon1.strength == "fire" && pokemon2.strength == "grass") ||// Charmander vs Bulbasaur
-                    (pokemon1.strength == "grass" && pokemon2.strength == "water") || //Bulbasaur vs Squirtle) 
-                    (pokemon1.strength == "water" && pokemon2.strength == "fire"))// Squirtle vs Charmander 
+            else if(pokemon1.getStrength() == pokemon2.getWeakness())
             {
                 return 1;
             }
-            
-            // If pokemon1 doesn't win, pokemon2 wins
-            return 2;
+            else
+            {
+                return 2;
+            }
         }
 
         public int checkWinner(int trainerScoorOne, int trainerScoorTwo)
         {
             if (trainerScoorOne > trainerScoorTwo)
             {
-                Logger.log($"{trainer1.name} heeft dit battle gewonnen");
+                Logger.log($"{trainer1.getName()} heeft dit battle gewonnen");
                 return 1;
             }
             else if (trainerScoorTwo > trainerScoorOne)
             {
-                Logger.log($"{trainer2.name} heeft dit battle gewonnen");
+                Logger.log($"{trainer2.getName()} heeft dit battle gewonnen");
                 return 2;
             }
             else

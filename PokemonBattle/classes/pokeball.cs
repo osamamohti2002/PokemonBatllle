@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace PokemonBattle.classes
 {
-    public class Pokeball
+    public sealed class Pokeball
     {
-        public Pokemon pokemon;
-        public bool hasChaermanderInside = true;
+        private readonly Pokemon pokemon;
+        private bool isOpen = false;
 
 
         public Pokeball(Pokemon pokemon)
@@ -17,16 +17,21 @@ namespace PokemonBattle.classes
             this.pokemon = pokemon;
         }
 
+        public Pokemon getPokemon()
+        {
+            return pokemon;
+        }
+
         public Pokemon Open(Pokemon pokemon)
         {
-            hasChaermanderInside = false;
+            isOpen = true;
             var pokemonValue = pokemon;
             pokemon = null;
             return pokemonValue;
         }
         public Pokemon Close(Pokemon pokemon)
         {
-            hasChaermanderInside = true;
+            isOpen = false;
             return pokemon;
 
         }

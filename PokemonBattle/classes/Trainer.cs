@@ -10,19 +10,29 @@ namespace PokemonBattle.classes
 {
     public class Trainer
     {
-        public string name;
-        public List<Pokeball> belt = new List<Pokeball>();
+        private readonly string name;
+        private readonly List<Pokeball> belt;
 
         public Trainer(string name)
         {
             this.name = name;
+            belt = new List<Pokeball>();
         }
 
+        public string getName()
+        {
+            return name;
+        }
+
+        public List<Pokeball> getPokeballs()
+        {
+            return belt;
+        }
 
 
         public Pokemon Throwpokeball(Pokeball pokeball)
         {
-            var pokemon = pokeball.Open(pokeball.pokemon);
+            var pokemon = pokeball.Open(pokeball.getPokemon());
             return pokemon;
 
         }
@@ -30,7 +40,6 @@ namespace PokemonBattle.classes
         public void removrPokeball(Pokeball pokeball)
         {
             belt.Remove(pokeball);
-            //Logger.log($"the pokeball is removed {pokeball.pokemon.NickName}");
         }
 
         public Pokemon returnPokemon(Pokeball pokeball, Pokemon pokemon)

@@ -8,14 +8,14 @@ namespace PokemonBattle.classes
 {
      class Squirtle : Pokemon
     {
-        public Squirtle() : base("Squirtle", "water", "leaf")
+        public Squirtle() : base("Squirtle", PokemonType.Water, PokemonType.Leef)
         {
 
         }
 
         public override string battleCry()
         {
-            return $"{NickName} Squirtle Squirtle ";
+            return $"{getNickName()} Squirtle Squirtle ";
         }
     }
 }
